@@ -64,6 +64,11 @@ export default {
           surface: "hsl(var(--fitness-surface))",
           "surface-hover": "hsl(var(--fitness-surface-hover))",
         },
+        brand: {
+          teal: "hsl(174 100% 42%)",
+          "teal-dark": "hsl(174 85% 35%)",
+          yellow: "hsl(45 100% 60%)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
