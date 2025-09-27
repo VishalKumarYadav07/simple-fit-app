@@ -2,41 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* FitTrack Design System - Dark Theme with Cyan Accents */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark theme base colors */
+    --background: 220 27% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 25% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 25% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Fitness brand colors - Cyan primary */
+    --primary: 188 100% 42%;
+    --primary-foreground: 220 27% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 188 100% 42%;
+    --accent-foreground: 220 27% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 20%;
+    --input: 220 20% 16%;
+    --ring: 188 100% 42%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom fitness app colors */
+    --fitness-accent: 188 100% 42%;
+    --fitness-success: 120 100% 40%;
+    --fitness-warning: 45 100% 60%;
+    --fitness-surface: 220 25% 12%;
+    --fitness-surface-hover: 220 25% 15%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(188 100% 42%), hsl(188 85% 35%));
+    --gradient-surface: linear-gradient(145deg, hsl(220 25% 12%), hsl(220 25% 10%));
+
+    /* Shadows */
+    --shadow-elevation: 0 4px 20px -4px hsl(220 27% 4% / 0.4);
+    --shadow-glow: 0 0 20px hsl(188 100% 42% / 0.3);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +116,35 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .card-fitness {
+    @apply bg-card border border-border rounded-xl shadow-[var(--shadow-elevation)] backdrop-blur-sm transition-all duration-300;
+  }
+
+  .card-fitness:hover {
+    @apply bg-[hsl(var(--fitness-surface-hover))] shadow-[var(--shadow-glow)];
+  }
+
+  .btn-primary {
+    @apply bg-[var(--gradient-primary)] text-primary-foreground font-medium rounded-lg px-6 py-3 transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply shadow-[var(--shadow-glow)] scale-[1.02];
+  }
+
+  .metric-card {
+    @apply card-fitness p-6 text-center;
+  }
+
+  .progress-bar {
+    @apply h-2 bg-muted rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-[var(--gradient-primary)] rounded-full transition-all duration-700 ease-out;
   }
 }

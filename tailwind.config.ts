@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        fitness: {
+          accent: "hsl(var(--fitness-accent))",
+          success: "hsl(var(--fitness-success))",
+          warning: "hsl(var(--fitness-warning))",
+          surface: "hsl(var(--fitness-surface))",
+          "surface-hover": "hsl(var(--fitness-surface-hover))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
