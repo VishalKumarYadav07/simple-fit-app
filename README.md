@@ -1,7 +1,7 @@
 # FitTrack Project Documentation
 
 ## Overview
-FitTrack is a comprehensive fitness tracking application designed to help users track their health and fitness goals efficiently.
+FitTrack is a comprehensive fitness tracking application designed to help users to track their health and fitness goals efficiently.
 
 ## Features
 - **User Authentication**: Secure login and registration.
